@@ -2,9 +2,9 @@
 -- The original addon was writed by Andrew O'Hara in 2009.
 
 ----------------------------
--- Sounds to play on kill --
+-- Sounds to play on leave of a combat --
 ----------------------------
-local killsounds = {
+local endCombat = {
 	"EH_LichKing_Chapter1Whisper13.ogg",
 	"EH_LichKing_Chapter1Whisper01.ogg",
 	"EH_LichKing_Chapter1Whisper04.ogg",
@@ -16,7 +16,7 @@ local killsounds = {
 }
 	
 --------------------------------------
--- Sounds to play on Quest Complete --
+-- Sounds to play on new achievement --
 --------------------------------------
 local achievsounds = {
 	"EH_LichKing_Greeting2.ogg",
@@ -27,7 +27,7 @@ local achievsounds = {
 }	
 
 --------------------------------
--- Sounds to play on level Up --
+-- Sounds to play on level up --
 --------------------------------
 local lvlsounds = { 
 	"EH_LichKing_Farewell1.ogg",
@@ -58,7 +58,7 @@ local function OnEvent(self, event)
 		elseif event == "PLAYER_DEAD" then
 			PlaySoundFile("Sound\\Creature\\LichKing\\"..deathsounds[math.random(#deathsounds)])
 		elseif event == "PLAYER_REGEN_ENABLED" and (math.random(4)) == 1 then
-			PlaySoundFile("Sound\\Creature\\LichKing\\"..killsounds[math.random(#killsounds)])
+			PlaySoundFile("Sound\\Creature\\LichKing\\"..endCombat[math.random(#endCombat)])
 		end
 		
 		time = GetTime()
