@@ -1,0 +1,12 @@
+## Interface: 60200
+## Title: Servant of the Lich King
+## Title-frFR: Serviteur de le Lich King
+## Title-ruRU: Слуга Короля Лича
+## Author: Demonist
+## Version: 2.0
+## Notes: As a servant of the Lich King, you have a mental link with him.  The Lich King is ever watchful over his minions, and he will speak to you through your mind of praise and criticism as you progress in your mission.
+## Notes-frFR: Le Lich King féliciter vous pour vos accomplissements.
+## DefaultState: Enabled
+## LoadOnDemand: 0
+
+Servant.lua
