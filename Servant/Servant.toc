@@ -2,7 +2,7 @@
 ## Title: Servant of the Lich King
 ## Title-frFR: Serviteur de le Lich King
 ## Author: Demonist
-## Version: 2.2
+## Version: 2.2.1
 ## SavedVariables: LichServantStorage
 ## Notes: As a servant of the Lich King, you have a mental link with him.  The Lich King is ever watchful over his minions, and he will speak to you through your mind of praise and criticism as you progress in your mission.
 ## Notes-frFR: Le Lich King féliciter vous pour vos accomplissements.

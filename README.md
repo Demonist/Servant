@@ -7,5 +7,9 @@ The original addon site: [http://wow.curseforge.com/addons/servant-lich-king/](h
 #Installation
 Just copy **Servant** folder to **World of Warcraft\\Interface\\AddOns\\**.
 
+#Slash commands
+>**/lichservant arena** - toggle dead sounds on PvP arena  
+>**/lichservant version** - display the addon version
+
 #Have a question?
 Write - **demonist616@gmail.com**

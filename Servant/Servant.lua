@@ -90,7 +90,7 @@ function SlashCmdList.LICHSERVANT(msg)
 		end
 	else
 		DEFAULT_CHAT_FRAME:AddMessage("|cFFffff00Servant of the Lich King|r commands:")
-		DEFAULT_CHAT_FRAME:AddMessage("   |cFFffff00/lichservant arena|r - toogle dead sounds on PvP arens")
+		DEFAULT_CHAT_FRAME:AddMessage("   |cFFffff00/lichservant arena|r - toggle dead sounds on PvP arena")
 		DEFAULT_CHAT_FRAME:AddMessage("   |cFFffff00/lichservant version|r - print the addon version")
 	end
 end
