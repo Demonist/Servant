@@ -56,6 +56,7 @@ local function OnEvent(self, event)
 		elseif event == "ACHIEVEMENT_EARNED" then
 			PlaySoundFile("Sound\\Creature\\LichKing\\"..achievsounds[math.random(#achievsounds)])
 		elseif event == "PLAYER_DEAD" then
+			if LichServantStorage["arena"] == false and IsActiveBattlefieldArena() then return; end
 			PlaySoundFile("Sound\\Creature\\LichKing\\"..deathsounds[math.random(#deathsounds)])
 		elseif event == "PLAYER_REGEN_ENABLED" and (math.random(4)) == 1 then
 			PlaySoundFile("Sound\\Creature\\LichKing\\"..endCombat[math.random(#endCombat)])
@@ -71,3 +72,25 @@ eventFrame:RegisterEvent("PLAYER_LEVEL_UP")
 eventFrame:RegisterEvent("ACHIEVEMENT_EARNED")
 eventFrame:RegisterEvent("PLAYER_DEAD")
 eventFrame:RegisterEvent("PLAYER_REGEN_ENABLED")
+
+if not LichServantStorage then LichServantStorage = {}; end
+if not LichServantStorage["arena"] then LichServantStorage["arena"] = false; end
+
+SLASH_LICHSERVANT1 = "/lichservant"
+function SlashCmdList.LICHSERVANT(msg)
+	if msg == "version" then
+		DEFAULT_CHAT_FRAME:AddMessage("|cFFffff00Servant of the Lich King:|r Version - "..GetAddOnMetadata("Servant", "Version"))
+	elseif msg == "arena" then
+		if LichServantStorage["arena"] == true then
+			LichServantStorage["arena"] = false
+			DEFAULT_CHAT_FRAME:AddMessage("|cFFffff00Servant of the Lich King:|r PvP arena dead sounds are |cFFffc0c0disabled|r")
+		else
+			LichServantStorage["arena"] = true
+			DEFAULT_CHAT_FRAME:AddMessage("|cFFffff00Servant of the Lich King:|r PvP arena dead sounds are |cFFc0ffc0enabled|r")
+		end
+	else
+		DEFAULT_CHAT_FRAME:AddMessage("|cFFffff00Servant of the Lich King|r commands:")
+		DEFAULT_CHAT_FRAME:AddMessage("   |cFFffff00/lichservant arena|r - toogle dead sounds on PvP arens")
+		DEFAULT_CHAT_FRAME:AddMessage("   |cFFffff00/lichservant version|r - print the addon version")
+	end
+end
